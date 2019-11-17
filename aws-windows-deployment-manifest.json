@@ -1,0 +1,15 @@
+{
+  "manifestVersion": 1,
+  "deployments": {
+    "aspNetCoreWeb": [
+      {
+        "name": "test-wedding-site",
+        "parameters": {
+          "appBundle": "site7.zip",
+          "iisPath": "/",
+          "iisWebSite": "Default Web Site"
+        }
+      }
+    ]
+  }
+}
