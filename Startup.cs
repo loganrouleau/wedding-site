@@ -24,14 +24,6 @@ namespace wedding_site
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // if (_env.IsProduction())
-            // {
-            //     services.AddHttpsRedirection(options =>
-            //     {
-            //         options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
-            //         options.HttpsPort = 443;
-            //     });
-            // }
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
@@ -55,7 +47,6 @@ namespace wedding_site
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
