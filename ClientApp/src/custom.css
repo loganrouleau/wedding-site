@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+
+body {
+  background-color: #fdf7e5;
+}
+
 h1 {
   text-align: center;
+  font-family: "Playfair Display", black-italic;
 }
 
 h2 {
@@ -26,4 +33,18 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
