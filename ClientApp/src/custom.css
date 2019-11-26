@@ -1,50 +1,35 @@
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Laila");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 body {
-  background-color: #fdf7e5;
+  background-color: #fbf0ff;
+  /* background-image: linear-gradient(#fffdf7, white); */
+  font-family: "Raleway";
 }
 
 h1 {
   text-align: center;
-  font-family: "Playfair Display", black-italic;
+  font-family: "Laila";
 }
 
 h2 {
   text-align: center;
+  font-family: "Laila";
 }
 
 p {
   text-align: center;
-}
-
-form {
-  text-align: center;
+  font-size: 18px;
 }
 
 a {
+  font-family: "Raleway";
   color: #0366d6;
 }
 
-code {
-  color: #e01a76;
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-/* Container holding the image and the text */
-.container {
-  position: relative;
-  text-align: center;
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.centered-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

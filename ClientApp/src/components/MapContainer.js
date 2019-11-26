@@ -28,28 +28,33 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <Map
-        google={this.props.google}
-        style={this.props.style}
-        onClick={this.onMapClicked}
-        initialCenter={this.props.latlng}
-        zoom={13}
-      >
-        <Marker onClick={this.onMarkerClick} />
-
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onMapClicked}
+      <div className="map-wrap">
+        <Map
+          google={this.props.google}
+          style={this.props.style}
+          containerStyle={this.props.style}
+          onClick={this.onMapClicked}
+          initialCenter={this.props.latlng}
+          zoom={13}
+          className="map-wrap"
         >
-          <div>
-            <p>False Creek Yacht Club</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=False+Creek+Yacht+Club&query_place_id=ChIJibuX-9FzhlQRX5h7WXB_cWU">
-              1661 Granville St, Vancouver, BC V6Z 1N3
-            </a>
-          </div>
-        </InfoWindow>
-      </Map>
+          <Marker onClick={this.onMarkerClick} />
+
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onMapClicked}
+            style={{ fontFamily: "Montserrat" }}
+          >
+            <div>
+              <p style={{ textAlign: "center" }}>False Creek Yacht Club</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=False+Creek+Yacht+Club&query_place_id=ChIJibuX-9FzhlQRX5h7WXB_cWU">
+                1661 Granville St, Vancouver
+              </a>
+            </div>
+          </InfoWindow>
+        </Map>
+      </div>
     );
   }
 }
