@@ -2,8 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
 body {
-  background-color: #fbf0ff;
-  /* background-image: linear-gradient(#fffdf7, white); */
+  background-color: #fffdfa;
   font-family: "Raleway";
 }
 
@@ -31,5 +30,51 @@ a {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+}
+
+.width-constrained {
+  width: 768px;
+}
+
+.width-constrained > p,
+h1,
+h2 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .width-constrained {
+    width: 100%;
+  }
+}
+
+.top-margin {
+  height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .top-margin {
+    height: 0;
+  }
+}
+
+.hide-on-mobile {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .show-on-mobile {
+    display: block;
+  }
 }

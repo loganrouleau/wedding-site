@@ -5,7 +5,7 @@
       {
         "name": "test-wedding-site",
         "parameters": {
-          "appBundle": "site12.zip",
+          "appBundle": "site13.zip",
           "iisPath": "/",
           "iisWebSite": "Default Web Site"
         }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
+import { debounce } from "throttle-debounce";
 
 export class MapContainer extends Component {
   static defaultProps = {
@@ -8,7 +9,8 @@ export class MapContainer extends Component {
 
   state = {
     showingInfoWindow: false,
-    activeMarker: {}
+    activeMarker: {},
+    containerWidth: Math.min(window.innerWidth - 17, 768)
   };
 
   onMarkerClick = (props, marker, e) =>
@@ -26,17 +28,36 @@ export class MapContainer extends Component {
     }
   };
 
+  debouncedHandleWindowResize = () => {
+    return debounce(
+      1000,
+      this.setState({ containerWidth: Math.min(window.innerWidth - 17, 768) })
+    );
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.debouncedHandleWindowResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.debouncedHandleWindowResize);
+  }
+
   render() {
     return (
-      <div className="map-wrap">
+      <div className="width-constrained">
         <Map
           google={this.props.google}
           style={this.props.style}
-          containerStyle={this.props.style}
+          containerStyle={{
+            width: this.state.containerWidth,
+            height: "350px",
+            display: "block",
+            overflow: "hidden"
+          }}
           onClick={this.onMapClicked}
           initialCenter={this.props.latlng}
           zoom={13}
-          className="map-wrap"
         >
           <Marker onClick={this.onMarkerClick} />
 
@@ -44,7 +65,7 @@ export class MapContainer extends Component {
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
             onClose={this.onMapClicked}
-            style={{ fontFamily: "Montserrat" }}
+            style={{ fontFamily: "Raleway" }}
           >
             <div>
               <p style={{ textAlign: "center" }}>False Creek Yacht Club</p>
